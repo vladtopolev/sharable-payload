@@ -64,6 +64,20 @@ export const Test: CollectionConfig = {
             },
           ],
         },
+        {
+          slug: 'extra-info',
+          labels: {
+            singular: 'Extra Info',
+            plural: 'Extra Info',
+          },
+          fields: [
+            {
+              name: 'about',
+              type: 'textarea',
+              required: true,
+            },
+          ],
+        },
       ],
     },
   ],
