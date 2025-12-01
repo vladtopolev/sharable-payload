@@ -168,6 +168,24 @@ export interface Media {
 export interface Test {
   id: number;
   name: string;
+  blocks?:
+    | (
+        | {
+            firstName: string;
+            lastName: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'common-info';
+          }
+        | {
+            weight: number;
+            height: number;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'sport-info';
+          }
+      )[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -295,6 +313,26 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface TestSelect<T extends boolean = true> {
   name?: T;
+  blocks?:
+    | T
+    | {
+        'common-info'?:
+          | T
+          | {
+              firstName?: T;
+              lastName?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'sport-info'?:
+          | T
+          | {
+              weight?: T;
+              height?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
   updatedAt?: T;
   createdAt?: T;
 }
