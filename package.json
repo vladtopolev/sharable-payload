@@ -1,9 +1,15 @@
 {
-  "name": "sharable-collections",
+  "name": "@sharable/collections",
   "version": "1.0.0",
-  "description": "A blank template to get started with Payload 3.0",
+  "description": "Sharable Payload collections",
   "license": "MIT",
   "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./src/collections/*": "./src/collections/*.ts",
+    "./collections/*": "./src/collections/*.ts"
+  },
   "scripts": {
     "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
