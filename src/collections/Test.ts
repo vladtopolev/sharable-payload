@@ -50,6 +50,20 @@ export const Test: CollectionConfig = {
             },
           ],
         },
+        {
+          slug: 'professional',
+          labels: {
+            singular: 'Professional',
+            plural: 'Professional',
+          },
+          fields: [
+            {
+              name: 'jobPosition',
+              type: 'text',
+              required: true,
+            },
+          ],
+        },
       ],
     },
   ],
